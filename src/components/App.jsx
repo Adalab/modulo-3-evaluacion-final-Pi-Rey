@@ -58,7 +58,7 @@ function App() {
         />
         <Route
           path="/character/:characterId"
-          element={<CharacterDetail charDetail={charDetail} />}
+          element={<CharacterDetail charDetail={charDetail} reset={reset} />}
         />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

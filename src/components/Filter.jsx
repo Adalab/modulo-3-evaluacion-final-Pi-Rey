@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 function Filter({setInputName, inputName,reset}) {
   return (
-    <fieldset >
+    <fieldset className="fieldset" >
         <FilterByName setInputName={setInputName} inputName={inputName}/>
-        <button onClick={reset}>Reset</button>
+        <button className="fieldset--btn" onClick={reset}>Reset</button>
     </fieldset>
   )
 }
