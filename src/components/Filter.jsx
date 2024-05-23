@@ -1,6 +1,7 @@
 import FilterByName from "./FilterByName";
 import PropTypes from "prop-types";
 import FilterBySpecies from "./FilterBySpecies";
+import FilterByPlanet from "./FilterByPlanet";
 
 function Filter({
   setInputName,
@@ -8,6 +9,9 @@ function Filter({
   inputSpecies,
   setInputSpecies,
   reset,
+  getPlanet,
+  updatePlanets,
+  inputArrayPlanet,
 }) {
   return (
     <fieldset className="fieldset">
@@ -15,6 +19,11 @@ function Filter({
       <FilterBySpecies
         inputSpecies={inputSpecies}
         setInputSpecies={setInputSpecies}
+      />
+      <FilterByPlanet
+        planets={getPlanet()}
+        updatePlanets={updatePlanets}
+        inputArrayPlanet={inputArrayPlanet}
       />
       <button className="fieldset--btn" onClick={reset}>
         Reset
@@ -28,7 +37,10 @@ Filter.propTypes = {
   inputName: PropTypes.string,
   reset: PropTypes.func,
   inputSpecies: PropTypes.string,
-  setInputSpecies: PropTypes.func
+  setInputSpecies: PropTypes.func,
+  getPlanet: PropTypes.func,
+  updatePlanets: PropTypes.func,
+  inputArrayPlanet: PropTypes.string,
 };
 
 export default Filter;

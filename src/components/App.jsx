@@ -13,13 +13,15 @@ function App() {
   const [charactersList, setCharactersList] = useState([]);
   const [inputName, setInputName] = useState("");
   const [inputSpecies, setInputSpecies] = useState("");
+  const [inputArrayPlanet, setInputArrayPlanet] = useState([]);
 
   //FUNCIONES
 
   //resetear el valor del input
   const reset = () => {
     setInputName("");
-    setInputSpecies("")
+    setInputSpecies("");
+    setInputArrayPlanet([]);
   };
 
   //guardar la api en la variable de estado
@@ -30,14 +32,40 @@ function App() {
     console.log(charactersList);
   }, []);
 
-  //filtrar por nombre, especie
+  //obtener los planetas
+  const getPlanet = () => {
+    const planets = charactersList.map((char) => char.planet);
+    const uniquePlanetsObj = new Set(planets);
+    const uniquePlanetsArr = [...uniquePlanetsObj];
+    return uniquePlanetsArr;
+  };
+  //actualizar inputPlanet
+  const updatePlanets = (value) => {
+    if (inputArrayPlanet.includes(value)) {
+      const newArrayPlanet = inputArrayPlanet.filter(
+        (planet) => planet !== value
+      );
+      setInputArrayPlanet(newArrayPlanet);
+    } else {
+      setInputArrayPlanet([...inputArrayPlanet, value]);
+    }
+  };
+
+  //filtrar por nombre, especie, planeta
   const filteredList = charactersList
     .filter((character) =>
       character.name.toLowerCase().includes(inputName.toLowerCase())
     )
     .filter((character) =>
       inputSpecies ? inputSpecies === character.species : true
-    );
+    )
+    .filter((character) => {
+      if (inputArrayPlanet.length === 0) {
+        return true;
+      } else {
+        return inputArrayPlanet.includes(character.planet);
+      }
+    });
 
   //conseguir el id de la ruta dinámica y almacenarlo si corresponde con un character
   const { pathname } = useLocation();
@@ -66,6 +94,9 @@ function App() {
                 inputSpecies={inputSpecies}
                 setInputSpecies={setInputSpecies}
                 reset={reset}
+                getPlanet={getPlanet}
+                updatePlanets={updatePlanets}
+                inputArrayPlanet={inputArrayPlanet}
               />
               <ListCharacter
                 charactersList={filteredList}
