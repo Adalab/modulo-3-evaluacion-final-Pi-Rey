@@ -14,6 +14,10 @@ function App() {
   const [inputName, setInputName] = useState("");
 
   //FUNCIONES
+
+  //resetear el valor del input
+  const reset =()=>setInputName("");
+
   //guardar la api en la variable de estado
   useEffect(() => {
     getDataFromApi().then((newArray) => {
@@ -41,13 +45,13 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header reset={reset} />
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Filter setInputName={setInputName} inputName={inputName}  />
+              <Filter setInputName={setInputName} inputName={inputName} reset={reset}/>
               <ListCharacter charactersList={filteredList} inputName={inputName} />
             </>
           }
