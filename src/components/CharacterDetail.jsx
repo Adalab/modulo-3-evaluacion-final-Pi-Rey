@@ -1,8 +1,12 @@
-
-function CharacterDetail() {
+import PropTypes from "prop-types";
+function CharacterDetail({charDetail}) {
   return (
-    <div>CharacterDetail</div>
+    <div>{charDetail.name}</div>
   )
+}
+
+CharacterDetail.propTypes = {
+    charDetail: PropTypes.object
 }
 
 export default CharacterDetail
