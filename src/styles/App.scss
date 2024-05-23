@@ -9,3 +9,19 @@
         width: 200px;
     }
 }
+.sectionList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.article{
+    width: 250px;
+    height: 250px;
+    border: 2px solid rgb(50, 194, 115);
+    text-align: center;
+margin: auto;
+padding: 5px;
+    &--img{
+        width: 80%;
+    }
+}

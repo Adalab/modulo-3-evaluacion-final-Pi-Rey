@@ -1,8 +1,16 @@
+import PropTypes from "prop-types";
+import Character from "./Character";
 
-function ListCharacter() {
+function ListCharacter({charactersList}) {
+
+    const html = charactersList.map((character)=> <Character key={character.id} character={character} />)
   return (
-    <div>ListCharacter</div>
+    <section className="sectionList" >{html}</section>
   )
 }
 
+
+ListCharacter.propTypes ={
+    charactersList: PropTypes.array
+}
 export default ListCharacter

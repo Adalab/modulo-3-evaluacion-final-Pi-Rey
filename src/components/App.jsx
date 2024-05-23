@@ -3,6 +3,7 @@ import "../styles/App.scss";
 import headerImg from "../images/header_image.png";
 import getDataFromApi from "../services/api";
 import { useState, useEffect } from "react";
+import ListCharacter from "./ListCharacter";
 
 function App() {
   //Variable de estado
@@ -21,7 +22,7 @@ function App() {
       <header>
         <img className="header--img" src={headerImg} alt="" />
       </header>
-      <h1>Hola mundo</h1>
+      <ListCharacter charactersList={charactersList} />
     </>
   );
 }
