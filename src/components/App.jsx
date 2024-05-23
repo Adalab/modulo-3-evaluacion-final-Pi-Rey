@@ -12,23 +12,32 @@ function App() {
   //Variable de estado
   const [charactersList, setCharactersList] = useState([]);
   const [inputName, setInputName] = useState("");
+  const [inputSpecies, setInputSpecies] = useState("");
 
   //FUNCIONES
 
   //resetear el valor del input
-  const reset =()=>setInputName("");
+  const reset = () => {
+    setInputName("");
+    setInputSpecies("")
+  };
 
   //guardar la api en la variable de estado
   useEffect(() => {
-    getDataFromApi().then((newArray) => {
-      setCharactersList(newArray);
+    getDataFromApi().then((arr) => {
+      setCharactersList(arr);
     });
+    console.log(charactersList);
   }, []);
 
-  //filtrar por nombre
-  const filteredList = charactersList.filter((character) =>
-    character.name.toLowerCase().includes(inputName.toLowerCase())
-  );
+  //filtrar por nombre, especie
+  const filteredList = charactersList
+    .filter((character) =>
+      character.name.toLowerCase().includes(inputName.toLowerCase())
+    )
+    .filter((character) =>
+      inputSpecies ? inputSpecies === character.species : true
+    );
 
   //conseguir el id de la ruta dinámica y almacenarlo si corresponde con un character
   const { pathname } = useLocation();
@@ -51,8 +60,17 @@ function App() {
           path="/"
           element={
             <>
-              <Filter setInputName={setInputName} inputName={inputName} reset={reset}/>
-              <ListCharacter charactersList={filteredList} inputName={inputName} />
+              <Filter
+                setInputName={setInputName}
+                inputName={inputName}
+                inputSpecies={inputSpecies}
+                setInputSpecies={setInputSpecies}
+                reset={reset}
+              />
+              <ListCharacter
+                charactersList={filteredList}
+                inputName={inputName}
+              />
             </>
           }
         />

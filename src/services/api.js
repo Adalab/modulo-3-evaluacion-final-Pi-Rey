@@ -14,7 +14,8 @@ const getDataFromApi = () => {
             id: character.id
           };
         });
-        return newArray;
+        const sortedNewArray = newArray.sort((a, b) => a.name.localeCompare(b.name));
+        return sortedNewArray;
       });
   };
   
