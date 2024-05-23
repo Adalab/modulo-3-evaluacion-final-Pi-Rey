@@ -47,8 +47,8 @@ function App() {
           path="/"
           element={
             <>
-              <Filter setInputName={setInputName} />
-              <ListCharacter charactersList={filteredList} />
+              <Filter setInputName={setInputName} inputName={inputName}  />
+              <ListCharacter charactersList={filteredList} inputName={inputName} />
             </>
           }
         />
