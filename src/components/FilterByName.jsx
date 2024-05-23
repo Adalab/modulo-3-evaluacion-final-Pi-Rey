@@ -5,7 +5,7 @@ function FilterByName({ setInputName, inputName }) {
 
     <form action="" onSubmit={((ev)=>ev.preventDefault())}>
         <label htmlFor="nameSearch">Introduce el nombre de un personaje:</label>
-        <input type="text" name="nameSearch" id="nameSearch" placeholder="Morty Smith" value={inputName} onChange={((ev)=> setInputName(ev.target.value))} />
+        <input className="inputtext" type="text" name="nameSearch" id="nameSearch" placeholder="Morty Smith" value={inputName} onChange={((ev)=> setInputName(ev.target.value))} />
     </form>
   );
 }

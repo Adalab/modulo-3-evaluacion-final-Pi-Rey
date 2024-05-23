@@ -9,8 +9,12 @@ function ListCharacter({ charactersList, inputName }) {
     // <section className="sectionList" >{html}</section>
     <section className="sectionList">
       {charactersList.length === 0
-        ? "No hay ningún personaje que coincida con la palabra " + inputName
-        : html}
+        ? (        <p className="sectionList--message">
+        No hay ningún personaje que coincida con la palabra: <span className="sectionList--input">{inputName}</span>
+      </p>
+    ) : (
+      html
+    )}
     </section>
   );
 }
