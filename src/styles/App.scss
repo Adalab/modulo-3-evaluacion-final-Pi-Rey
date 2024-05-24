@@ -22,6 +22,7 @@
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 100px;
+  padding: 0 30px;
   &--message {
     color: white;
     margin-left: 20px;
@@ -42,7 +43,7 @@
   border: 2px solid #42b4ca;
   text-align: center;
   margin: auto;
-  padding: 5px;
+  padding: 10px;
   background-color: none;
   color: white;
   font-size: 1.2rem;
@@ -51,8 +52,8 @@
     color: inherit;
   }
   &--img {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     width: 80%;
   }
   &:hover {
