@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 import headerImg from "../images/header_image.png";
 
 function Header({ reset }) {
-  //TODO: meter un texto para saber que si pincho me lelva al inicio
   return (
     <header className="header">
       <Link to="/" onClick={reset}>
-        <img className="header--img" src={headerImg} alt="" />
+        <img
+          className="header--img"
+          src={headerImg}
+          alt="logo de la serie Rick and Morty"
+        />
       </Link>
     </header>
   );

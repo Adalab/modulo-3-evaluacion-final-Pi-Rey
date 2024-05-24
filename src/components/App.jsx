@@ -7,6 +7,7 @@ import Filter from "./Filter";
 import Header from "./Header";
 import PageNotFound from "./PageNotFound";
 import CharacterDetail from "./CharacterDetail";
+import Footer from "./Footer";
 
 function App() {
   //Variables de estado
@@ -113,6 +114,7 @@ function App() {
         />
         <Route path="*" element={<PageNotFound reset={reset} />} />
       </Routes>
+      <Footer />
     </>
   );
 }

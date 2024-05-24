@@ -2,6 +2,9 @@
 
 :root {
   background-color: rgb(24, 23, 23);
+  position: relative;
+  min-height: 100vh;
+  height: fit-content;
 }
 .header {
   display: flex;
@@ -18,15 +21,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 100px;
   &--message {
     color: white;
     margin-left: 20px;
     margin-right: 20px;
     font-size: 1.2rem;
     @media screen and (min-width: 768px) {
-        margin-left: 100px;
-        margin-right: 100px;
-      }
+      margin-left: 100px;
+      margin-right: 100px;
+    }
   }
   &--input {
     font-style: italic;
@@ -54,7 +58,6 @@
   &:hover {
     background-color: #bfde42;
     font-weight: bold;
-    //text-transform: uppercase;
     color: rgb(24, 23, 23);
   }
 }
@@ -65,6 +68,7 @@
   align-items: center;
   gap: 10px;
   color: white;
+  margin-bottom: 50px;
   &--article {
     width: 300px;
     height: fit-content;
@@ -103,7 +107,6 @@
 
 .fieldset {
   font-size: 1.2rem;
-  margin-left: 20px;
   margin-bottom: 20px;
   color: white;
   display: flex;
@@ -134,19 +137,17 @@
     margin-right: 10px;
   }
   &--text {
-    padding: 0 10px;
     font: 1em "handwriting", cursive, sans-serif;
     border: 2px solid #42b4ca;
-    //width: 80%;
     background: none;
     color: white;
+    box-shadow: 0px 3px 8px 1px rgb(255 254 246);
     &:hover {
       border: 2px solid #bfde42;
     }
   }
 }
 .inputspecies {
-  // appearance: none;
   padding: 5px 30px 5px 15px;
   font-size: 1.2rem;
   border: 3px solid #bfde42;
@@ -161,12 +162,15 @@
   }
 }
 
-.inputplanet{
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    &--opt{
-        margin-bottom: 10px;
-    }
+.inputplanet {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  box-shadow: 0px 3px 8px 1px rgb(255 254 246);
+  &--opt {
+    margin-bottom: 10px;
+
+  }
 }
 
 .hidden {
@@ -202,5 +206,20 @@
   @media screen and (min-width: 768px) {
     margin-left: 100px;
     margin-right: 100px;
+  }
+}
+.footer {
+  background-color: #42b3ca49;
+  padding: 5px 0 5px 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  border-top: 3px solid #bfde42;
+  color: white;
+  position: absolute;
+  transform: translate(0, 0);
+  bottom: 0px;
+  a {
+    color: white;
   }
 }

@@ -6,7 +6,9 @@ function FilterByName({ setInputName, inputName }) {
       action=""
       onSubmit={(ev) => ev.preventDefault()}
     >
-      <label className="inputname--label" htmlFor="nameSearch">Introduce el nombre de un personaje:</label>
+      <label className="inputname--label" htmlFor="nameSearch">
+        Introduce el nombre de un personaje:
+      </label>
       <input
         className="inputname--text"
         type="text"

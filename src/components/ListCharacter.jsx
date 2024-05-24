@@ -10,15 +10,15 @@ function ListCharacter({
   const html = charactersList.map((character) => (
     <Character key={character.id} character={character} />
   ));
+  const error1 = inputName === "" ? "" : " con la palabra:";
+  const error2 = inputName === "" ? "" : " y/o ";
   return (
-    // <section className="sectionList" >{html}</section>
     <section className="sectionList">
       {charactersList.length === 0 ? (
         <p className="sectionList--message">
-          No hay ningún personaje que coincida con la palabra:
-          <br />
-          <span className="sectionList--input">{inputName}</span> o con los
-          filtros introducidos <br />{" "}
+            No hay ningún personaje que coincida 
+         {error1 + " "}
+          <span className="sectionList--input">{inputName} </span> {error2}con los filtros seleccionados <br />{" "}
           <span className="sectionList--input">{inputSpecies}</span>
           <span className="sectionList--input">
             {inputArrayPlanet.map((item, i) => (

@@ -1,9 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import pickleImg from "../images/pickle_ricks.png"
+import pickleImg from "../images/pickle_ricks.png";
 function CharacterDetail({ charDetail, reset }) {
-  //TODO: cambiar el estilo en estas tarjetas
-  //<p className="characterdetail--article__cross">x</p>
   console.log(reset);
   return charDetail ? (
     <section className="characterdetail">
@@ -36,7 +34,7 @@ function CharacterDetail({ charDetail, reset }) {
   ) : (
     <section className="characterdetail">
       <article className="characterdetail--article">
-      <h3>Personaje no encontrado</h3>
+        <h3>Personaje no encontrado</h3>
         <img
           className="characterdetail--article__img"
           src={pickleImg}
