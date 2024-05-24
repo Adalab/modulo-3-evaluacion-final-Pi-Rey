@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 function FilterByPlanet({ planets, updatePlanets, inputArrayPlanet }) {
   return (
-    <form action="" onSubmit={(ev) => ev.preventDefault()}>
+    <form  className="inputplanet" action="" onSubmit={(ev) => ev.preventDefault()}>
       {planets.map((planet, i) => {
         return (
           <div key={i}>
             <input
+           className="inputplanet--opt"
               type="checkbox"
               name=""
               id={i}
@@ -13,7 +14,7 @@ function FilterByPlanet({ planets, updatePlanets, inputArrayPlanet }) {
               onChange={(ev) => {
                 updatePlanets(ev.target.value);
               }}
-            checked = {inputArrayPlanet.includes(planet)}
+              checked = {inputArrayPlanet.includes(planet)}
             />
             <label htmlFor="">{planet}</label>
           </div>
@@ -26,7 +27,7 @@ function FilterByPlanet({ planets, updatePlanets, inputArrayPlanet }) {
 FilterByPlanet.propTypes = {
   planets: PropTypes.array,
   updatePlanets: PropTypes.func,
-  inputArrayPlanet: PropTypes.string,
+  inputArrayPlanet: PropTypes.array,
 };
 
 export default FilterByPlanet;

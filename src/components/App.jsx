@@ -9,7 +9,7 @@ import PageNotFound from "./PageNotFound";
 import CharacterDetail from "./CharacterDetail";
 
 function App() {
-  //Variable de estado
+  //Variables de estado
   const [charactersList, setCharactersList] = useState([]);
   const [inputName, setInputName] = useState("");
   const [inputSpecies, setInputSpecies] = useState("");
@@ -101,6 +101,8 @@ function App() {
               <ListCharacter
                 charactersList={filteredList}
                 inputName={inputName}
+                inputSpecies={inputSpecies}
+                inputArrayPlanet={inputArrayPlanet}
               />
             </>
           }
@@ -109,7 +111,7 @@ function App() {
           path="/character/:characterId"
           element={<CharacterDetail charDetail={charDetail} reset={reset} />}
         />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="*" element={<PageNotFound reset={reset} />} />
       </Routes>
     </>
   );

@@ -40,7 +40,7 @@ Filter.propTypes = {
   setInputSpecies: PropTypes.func,
   getPlanet: PropTypes.func,
   updatePlanets: PropTypes.func,
-  inputArrayPlanet: PropTypes.string,
+  inputArrayPlanet: PropTypes.array,
 };
 
 export default Filter;
